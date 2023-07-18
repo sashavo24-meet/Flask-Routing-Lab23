@@ -7,12 +7,18 @@ app = Flask(  # Create a flask app
     static_folder='static'  # Name of directory for static files
 )
 
-# Your code should be below
 
+@app.route('/')
+def home():
+    return render_template('home.html')
 
+@app.route('/product')
+def product():
+    return render_template('product.html')
 
-
-# Your code should be above
+@app.route('/cart')
+def cart():
+    return render_template('cart.html')
 
 if __name__ == "__main__":  # Makes sure this is the main process
     app.run(debug=True)
